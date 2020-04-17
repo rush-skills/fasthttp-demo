@@ -13,7 +13,7 @@ func main() {
 	strRequestURI := []byte("http://localhost:8080")
 
 	//billion := 1000000000
-	for i := 0; i <= 10000; i++ {
+	for i := 0; i <= 1000000; i++ {
 		req := fasthttp.AcquireRequest()
 		clientId := rand.Intn(10) + 1
 		now := time.Now()
@@ -32,7 +32,4 @@ func main() {
 		fasthttp.ReleaseRequest(req)
 		fasthttp.ReleaseResponse(res)
 	}
-
-	// Do something with body.
-
 }
